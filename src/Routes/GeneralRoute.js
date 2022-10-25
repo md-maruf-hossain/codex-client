@@ -5,6 +5,7 @@ import Blog from "../Pages/Blog/Blog";
 import Courses from "../Pages/Courses/Courses";
 import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
+import Error404 from "../Pages/Shared/Error404/Error404";
 import ForgetPassword from "../Pages/Shared/ForgetPassword/ForgetPassword";
 import Register from "../Register/Register";
 
@@ -40,6 +41,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/forgetPassword',
                 element: <ForgetPassword></ForgetPassword>
+            },
+            {
+                path: "*",
+                element: <Error404></Error404>
             }
         ]
     }
