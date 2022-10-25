@@ -5,7 +5,6 @@ import Blog from "../Pages/Blog/Blog";
 import Courses from "../Pages/Courses/Courses";
 import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
-import ThemeToggle from "../Pages/ThemeToggle/ThemeToggle";
 import Register from "../Register/Register";
 
 export const routes = createBrowserRouter([
@@ -28,10 +27,6 @@ export const routes = createBrowserRouter([
             {
                 path: '/faq',
                 element: <FAQ></FAQ>
-            },
-            {
-                path: '/themeToggle',
-                element: <ThemeToggle></ThemeToggle>
             },
             {
                 path: '/login',
