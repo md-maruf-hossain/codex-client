@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center m-5">
       <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 text-gray-800">
         <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
         <p className="text-sm text-center text-gray-800">
           Dont have account?
-          <Link to="/register" rel="noopener noreferrer" className="focus:underline hover:underline">
+          <Link to="/register" rel="noopener noreferrer" className="focus:underline hover:underline font-bold text-emerald-500">
             Sign up here
           </Link>
         </p>
