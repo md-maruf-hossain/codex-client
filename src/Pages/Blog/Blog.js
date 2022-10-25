@@ -16,7 +16,7 @@ const Blog = () => {
           <div className="sm:col-span-3 lg:col-span-2">
             <div className="mb-3">
               <a href="/" aria-label="Article" className="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-700">
-                <p className="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl"> What is cors?</p>
+                <p className="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl">What is cors?</p>
               </a>
             </div>
             <p className="text-gray-700">
