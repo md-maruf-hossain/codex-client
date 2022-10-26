@@ -1,5 +1,9 @@
 import React from "react";
 import { FaEye } from "react-icons/fa";
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const CategoriesCard = ({ course }) => {
   const { title, image_url, details, author, total_view, price, rating } = course;
@@ -22,18 +26,26 @@ const CategoriesCard = ({ course }) => {
             <input type="checkbox" id="my-modal-6" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
               <div className="modal-box">
-              <img className="p-8 rounded-t-lg" src={image_url} alt="product name" />
+                <img className="p-8 rounded-t-lg" src={image_url} alt="product name" />
                 <h3 className="font-bold text-lg">{title}</h3>
                 <p className="py-4">{details}</p>
                 <p className="py-4 font-medium">Instructor Name: {author.name}</p>
-                <p className="py-4 flex items-center"><FaEye className="mr-2"/> {total_view}</p>
+                <p className="py-4 flex items-center">
+                  <FaEye className="mr-2" /> {total_view}
+                </p>
                 <div className="modal-action">
                   <label htmlFor="my-modal-6" className="btn">
                     Buy Now
                   </label>
-                  <label htmlFor="my-modal-6" className="btn">
-                    Download Course Outlet
-                  </label>
+                  <div ref={ref}>
+                    <Pdf targetRef={ref} filename="code-example.pdf">
+                      {({ toPdf }) => (
+                        <button onClick={toPdf}>
+                          <label htmlFor="my-modal-6" className="btn">Download PDF</label>
+                        </button>
+                      )}
+                    </Pdf>
+                  </div>
                 </div>
               </div>
             </div>
