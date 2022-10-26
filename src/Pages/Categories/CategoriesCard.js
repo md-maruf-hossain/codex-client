@@ -1,6 +1,5 @@
 import React from "react";
 import { FaEye } from "react-icons/fa";
-import ReactDOM from "react-dom";
 import Pdf from "react-to-pdf";
 
 const ref = React.createRef();
@@ -18,14 +17,16 @@ const CategoriesCard = ({ course }) => {
           </div>
           <div className="flex justify-between items-center">
             <span className="text-3xl font-bold text-white dark:text-white">{price}$</span>
-            <label htmlFor="my-modal-6" className="btn modal-button">
+
+            <label htmlFor="my-modal-3" className="btn modal-button">
               Details
             </label>
-
-            {/* Put this part before </body> tag */}
-            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
-              <div className="modal-box">
+            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+            <div className="modal">
+              <div className="modal-box relative">
+                <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">
+                  ✕
+                </label>
                 <img className="p-8 rounded-t-lg" src={image_url} alt="product name" />
                 <h3 className="font-bold text-lg">{title}</h3>
                 <p className="py-4">{details}</p>
@@ -34,14 +35,13 @@ const CategoriesCard = ({ course }) => {
                   <FaEye className="mr-2" /> {total_view}
                 </p>
                 <div className="modal-action">
-                  <label htmlFor="my-modal-6" className="btn">
-                    Buy Now
-                  </label>
                   <div ref={ref}>
                     <Pdf targetRef={ref} filename="code-example.pdf">
                       {({ toPdf }) => (
                         <button onClick={toPdf}>
-                          <label htmlFor="my-modal-6" className="btn">Download PDF</label>
+                          <label htmlFor="my-modal-6" className="btn">
+                            Download PDF
+                          </label>
                         </button>
                       )}
                     </Pdf>
