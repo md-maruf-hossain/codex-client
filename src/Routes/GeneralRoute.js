@@ -9,6 +9,7 @@ import Home from "../Pages/Home/Home";
 import Error404 from "../Pages/Shared/Error404/Error404";
 import ForgetPassword from "../Pages/Shared/ForgetPassword/ForgetPassword";
 import Register from "../Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/categories/:id",
-                element: <Categories></Categories>,
+                element: <PrivateRoute><Categories></Categories></PrivateRoute>,
                 loader: ({params}) =>fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
