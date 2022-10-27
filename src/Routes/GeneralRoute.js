@@ -12,47 +12,48 @@ import Register from "../Register/Register";
 import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
         path: "/",
-        element: <Main></Main>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>
-            },
-            {
-                path: '/courses',
-                element: <Courses></Courses>,
-            },
-            {
-                path: "/categories/:id",
-                element: <PrivateRoute><Categories></Categories></PrivateRoute>,
-                loader: ({params}) =>fetch(`http://localhost:5000/category/${params.id}`)
-            },
-            {
-                path: '/blog',
-                element: <Blog></Blog>
-            },
-            {
-                path: '/faq',
-                element: <FAQ></FAQ>
-            },
-            {
-                path: '/login',
-                element: <Login></Login>
-            },
-            {
-                path: '/register',
-                element: <Register></Register>
-            },
-            {
-                path: '/forgetPassword',
-                element: <ForgetPassword></ForgetPassword>
-            },
-            {
-                path: "*",
-                element: <Error404></Error404>
-            }
-        ]
-    }
-])
+        element: <Home></Home>,
+      },
+      {
+        path: "/courses",
+        element: <Courses></Courses>,
+      },
+      {
+        path: "/categories/:id",
+        element: <PrivateRoute><Categories></Categories></PrivateRoute>
+        ,
+        loader: ({ params }) => fetch(`https://codex-server.vercel.app/category/${params.id}`),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/faq",
+        element: <FAQ></FAQ>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/forgetPassword",
+        element: <ForgetPassword></ForgetPassword>,
+      },
+      {
+        path: "*",
+        element: <Error404></Error404>,
+      },
+    ],
+  },
+]);
