@@ -56,11 +56,9 @@ const Header = () => {
             <button onClick={handleLogOut} className="btn hover:bg-emerald-600 text-white">
               Logout
             </button>
-            <Link to="/login" className=" text-white ml-2">
-              <div className="avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
+              <div className="avatar tooltip tooltip-bottom ml-2" data-tip={user?.displayName}>
                 <div className="w-8 rounded-full">{user?.photoURL ? <img src={user?.photoURL} alt="" /> : <FaUserCircle className="text-4xl" />}</div>
               </div>
-            </Link>
           </>
         ) : (
           <Link to="/login" className="btn hover:bg-emerald-600 text-white">
