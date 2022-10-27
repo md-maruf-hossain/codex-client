@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cover from "../../assests/Business_SVG.svg";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
 const Header = () => {
   return (
@@ -18,6 +19,7 @@ const Header = () => {
             <p className="mt-6 mb-8 text-lg sm:mb-12">Hand-picked Instructor and expertly crafted courses, designed for the modern students and programmers.</p>
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
               <Link rel="noopener noreferrer" to="/courses" className="px-8 py-3 text-lg font-semibold rounded bg-emerald-600 text-gray-50">
+                <HiOutlineShoppingCart className="inline text-xl align-center mr-1"/>
                 Browse Courses
               </Link>
               <Link rel="noopener noreferrer" to="/blog" className="px-8 py-3 text-lg font-semibold border rounded border-gray-800 hover:bg-emerald-600 hover:text-white">
